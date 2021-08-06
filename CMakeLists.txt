@@ -79,8 +79,19 @@ add_definitions(-Dlinux -D_GNU_SOURCE
 	-DOSC_VERSION="${OSC_VERSION}"
 	${GIT_VERSION}
 	${GIT_COMMIT_TIMESTAMP}
-	-Wall -Werror
 	-DGTK_DISABLE_DEPRECATED
+	-D_POSIX_C_SOURCE=200809L
+)
+
+add_compile_options(-Wall -Wextra -Werror
+	-Wno-unused-parameter
+	-Wno-error=unused-but-set-variable
+	-Wno-error=unused-function
+	-Wimplicit-fallthrough
+	-Wvla
+	-std=gnu90
+	-g -O2
+	-rdynamic
 )
 
 if(UNIX)
