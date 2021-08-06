@@ -164,7 +164,7 @@ endif()
 
 # Override on distributions that do not use a global polkit prefix (e.g. NixOS)
 if(NOT DEFINED CMAKE_POLKIT_PREFIX)
-  set(CMAKE_POLKIT_PREFIX /usr)
+	set(CMAKE_POLKIT_PREFIX /usr)
 endif()
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
@@ -291,10 +291,12 @@ install(DIRECTORY icons DESTINATION ${SHARE_DEST})
 
 file(GLOB PROFILES profiles/*.cmakein)
 foreach(PROFILE IN LISTS PROFILES)
-  string(REPLACE ".cmakein" "" PROFILE_TARGET ${PROFILE})
-  get_filename_component(FROFILE_TARGET_BASENAME ${PROFILE_TARGET} NAME)
-  configure_file(${PROFILE} ${CMAKE_CURRENT_BINARY_DIR}/profiles/${FROFILE_TARGET_BASENAME})
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/profiles/${FROFILE_TARGET_BASENAME} DESTINATION ${PLIB_DEST}/profiles/)
+	string(REPLACE ".cmakein" "" PROFILE_TARGET ${PROFILE})
+	get_filename_component(FROFILE_TARGET_BASENAME ${PROFILE_TARGET} NAME)
+	configure_file(${PROFILE} ${CMAKE_CURRENT_BINARY_DIR}/profiles/${FROFILE_TARGET_BASENAME})
+	install(FILES ${CMAKE_CURRENT_BINARY_DIR}/profiles/${FROFILE_TARGET_BASENAME}
+		DESTINATION ${PLIB_DEST}/profiles/
+	)
 endforeach()
 
 file(GLOB PROFILES profiles/*.ini)
