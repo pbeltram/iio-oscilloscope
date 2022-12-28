@@ -9,14 +9,20 @@
 #define __CONFIG_H__
 
 #ifndef PREFIX
-#	define PREFIX "/usr/local"
+# define PREFIX "/usr/local"
+# define OSC_GLADE_FILE_PATH "/usr/local/share/osc/glade/"
+# define OSC_PLUGIN_PATH "/usr/local/lib/osc/"
+# define OSC_XML_PATH "/usr/local/lib/osc/xmls"
+# define OSC_FILTER_FILE_PATH "/usr/local/lib/osc/filters"
+# define OSC_WAVEFORM_FILE_PATH "/usr/local/lib/osc/waveforms"
+# define OSC_PROFILES_FILE_PATH "/usr/local/lib/osc/profiles"
+#else
+# define OSC_GLADE_FILE_PATH PREFIX "/share/osc/glade/"
+# define OSC_PLUGIN_PATH PREFIX "/lib/osc/"
+# define OSC_XML_PATH PREFIX "/lib/osc/xmls"
+# define OSC_FILTER_FILE_PATH PREFIX "/lib/osc/filters"
+# define OSC_WAVEFORM_FILE_PATH PREFIX "/lib/osc/waveforms"
+# define OSC_PROFILES_FILE_PATH PREFIX "/lib/osc/profiles"
 #endif
-
-#define OSC_GLADE_FILE_PATH PREFIX "/share/osc/"
-#define OSC_PLUGIN_PATH PREFIX "/lib/osc/"
-#define OSC_XML_PATH PREFIX "/lib/osc/xmls"
-#define OSC_FILTER_FILE_PATH PREFIX "/lib/osc/filters"
-#define OSC_WAVEFORM_FILE_PATH PREFIX "/lib/osc/waveforms"
-#define OSC_PROFILES_FILE_PATH PREFIX "/lib/osc/profiles"
 
 #endif

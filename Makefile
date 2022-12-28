@@ -50,7 +50,6 @@ LDFLAGS := $(DEP_LDFLAGS) \
 	$(if $(WITH_MINGW),-lwinpthread) \
 	-L$(SYSROOT)/usr/lib64 \
 	-L$(SYSROOT)/usr/lib \
-	-L$(SYSROOT)/usr/lib32 \
 	-lmatio -lz -lm -lad9361
 
 ifeq ($(WITH_MINGW),y)
@@ -66,6 +65,7 @@ CFLAGS := $(DEP_CFLAGS) \
 	-Wsign-compare -Wtype-limits -Wuninitialized -Wunused-but-set-parameter \
 	-Wextra -Wno-unused-parameter \
 	-Werror -g -std=gnu90 -D_GNU_SOURCE -O2 -funwind-tables \
+	-Wno-error=cast-function-type \
 	-DPREFIX='"$(PREFIX)"' \
 	-DFRU_FILES=\"$(FRU_FILES)\" $(GIT_VERSION) \
 	$(GIT_COMMIT_TIMESTAMP) \
