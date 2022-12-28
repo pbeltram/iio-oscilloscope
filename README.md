@@ -32,3 +32,11 @@ The IIO 'scope uses:
     http://code.google.com/p/inih/
 
 The IIO 'scope is copyright its authors, and is released under the GPL 2.0
+
+Build from [instructions](https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope)
+```
+mkdir build && cd build
+cmake ../ && make -j $(nproc)
+sudo make install
+```
+
