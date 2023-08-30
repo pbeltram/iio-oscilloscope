@@ -34,3 +34,31 @@ The IIO 'scope uses:
     http://code.google.com/p/inih/
 
 The IIO 'scope is copyright its authors, and is released under the GPL 2.0
+
+Extract [gtkdatabox-1.0.0.tar.gz](https://sourceforge.net/projects/gtkdatabox/files/gtkdatabox-1/)  
+
+```
+cd ./gtkdatabox-1.0.0
+./configure
+make
+sudo make install
+sudo ldconfig
+# Libraries have been installed in: /usr/local/lib
+cd ..
+```
+
+On Ubuntu 20.04-LTS:  
+```
+apt-get install libcurl4-openssl-dev libserialport-dev
+```
+
+Build/install: libiio (branch pb_enclustra_2020.2_devel).  
+Build/install: libad9361-iio (branch pb_enclustra_2020.2_devel).  
+
+```
+mkdir build && cd build
+cmake ../ && make -j $(nproc)
+sudo make install
+```
+
+
