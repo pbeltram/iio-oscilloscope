@@ -23,6 +23,7 @@ org.adi.pkexec.osc.policy
 osc-wrapper
 .vscode
 
+CI/appimage_x86_64/staging
+
 gtkdatabox-1.0.0/
 
-CI/appimage_x86_64/staging
