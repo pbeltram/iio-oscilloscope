@@ -1107,6 +1107,13 @@ static void load_plugins(GtkWidget *notebook, const char *ini_fn)
 			}
 
 			GArray *plugin_info = get_plugins_info();
+
+			if (plugin_info == NULL) {
+				fprintf(stderr, "Failed to load plugin \"%s\"", ent->d_name);
+				dlclose(lib);
+				continue;
+			}
+ 
 			if (plugin_info->len == 0) {
 				dlclose(lib);
 				continue;
